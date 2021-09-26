@@ -1,0 +1,40 @@
+{% extends "layout.html" %} 
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %} 
+    <h5> Current Cash: {{ user_cash | usd }} </h5>
+    <h5> Grand Total: {{ grand_total | usd }} </h5>
+    <br>
+
+    <div class="col-md-2"></div>
+    <div class="col-md-12">
+        <table class = "styled-table table-hover">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Share</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for stock in stocks %}
+
+                    <tr>
+                        <td> {{ stock.symbol }} </td>
+                        <td> {{ stock.company }}</td>
+                        <td> {{ stock.shares }} </td>
+                        <td> {{ stock.price | usd }} </td>
+                        <td> {{ stock.total | usd }} </td>
+                    </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>    
+{% endblock %}
