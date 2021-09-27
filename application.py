@@ -116,15 +116,14 @@ def buy():
         user_stocks = db.execute("SELECT * FROM stocks WHERE id = ? AND symbol = ?", session['user_id'], stocks['symbol'])
 
         # check if user owns the stock
-        if user_stocks == None:
+        if user_stocks != None:
             
             # calculate the new number of shares
             curr_shares = user_stocks[0]['shares']
             new_shares = curr_shares + int(shares)
 
             # calculate the new total of stock
-            curr_total = user_stocks[0]['total']
-            new_total = curr_total + total
+            new_total = new_shares * stocks['price']
 
             db.execute("UPDATE stocks SET shares = ?, price = ?, total = ? WHERE id = ? AND symbol = ?",
                      new_shares, stocks['price'], new_total, session['user_id'], stocks['symbol'])
@@ -312,7 +311,7 @@ def sell():
                     session['user_id'], stocks['symbol'], int(sold_shares), stocks['price'], "SELL", date)
         
         # update user's stock after selling
-        db.execute("UPDATE stocks SET shares = ?, price = ?, total = total - ? WHERE id = ? and symbol = ?",
+        db.execute("UPDATE stocks SET shares = ?, price = ?, total = ? WHERE id = ? and symbol = ?",
                     new_shares, stocks['price'], total_sold, session['user_id'], symbol)        
 
         return redirect("/")
