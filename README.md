@@ -45,7 +45,7 @@ Web app built with Flask in which users can "buy" and "sell" stocks by querying 
 6. sell
 --------------------------------
 
-
+![sell](https://user-images.githubusercontent.com/62752433/134965546-db3d6ea4-7bce-4896-bb08-96fd886c1d7d.png)
 
 
 &nbsp;
@@ -53,12 +53,13 @@ Web app built with Flask in which users can "buy" and "sell" stocks by querying 
 7. history
 ------------------------------
 
-![sell](https://user-images.githubusercontent.com/62752433/134965546-db3d6ea4-7bce-4896-bb08-96fd886c1d7d.png)
+
+![history](https://user-images.githubusercontent.com/62752433/134965587-a4a04e6b-240d-4b19-ba68-53b258ab4e9c.png)
+
 
 &nbsp;
 
 8. change password
 -----------------------------
 
-
-![history](https://user-images.githubusercontent.com/62752433/134965587-a4a04e6b-240d-4b19-ba68-53b258ab4e9c.png)
+![change-pass](https://user-images.githubusercontent.com/62752433/134965255-6d3bce20-29ed-4819-88dc-b46c9765a4ab.png)
